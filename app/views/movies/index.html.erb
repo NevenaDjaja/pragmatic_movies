@@ -1,0 +1,28 @@
+<div class="main">
+	<h1><%= pluralize(@movies.count, 'Movies') %></h1>
+
+	<div class="container">
+	  <% @movies.each do |movie| %>
+	    <article>
+	    	<h1><%= link_to movie[:title], movie %></h1>
+	    	<p><%= truncate(movie[:description], length: 40, separator: ' ') %></p>
+	    	<table style="text-align: left;">
+	    		<tbody>
+	    			<tr>
+	    				<th>Rating:</th>
+	    				<td><%= movie[:rating] %></td>
+	    			</tr>
+	    			<tr>
+	    				<th>Release date:</th>
+	    				<td><%= movie[:released_on].to_s(:release_date) %> (<%= time_ago_in_words(movie[:released_on]) %> ago)</td>
+	    			</tr>
+	    			<tr>
+	    				<th>Total gross:</th>
+	    				<td><%= format_total_gross(movie) %></td>
+	    			</tr>
+	    		</tbody>
+	    	</table>
+	    </article>
+	  <% end %>
+	</div>
+</div>
