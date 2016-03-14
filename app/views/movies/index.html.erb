@@ -1,5 +1,7 @@
 <div class="main">
 	<h1><%= pluralize(@movies.count, 'Movies') %></h1>
+	<%= link_to 'Add New Movie', new_movie_path %>
+
 
 	<div class="container">
 	  <% @movies.each do |movie| %>
