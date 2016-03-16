@@ -32,4 +32,11 @@ describe "viewing the list of movies" do
     expect(page).to have_text("May 2, 2008")
     expect(page).to have_text("$134,218,018.00")
   end
+
+  it 'doesnt show movie that was not relaesed yet' do 
+    movie = Movie.create(movie_attributes(released_on: 1.month.from_now))
+
+    visit movies_path
+    expect(page).not_to have_text(movie.title)
+  end
 end
