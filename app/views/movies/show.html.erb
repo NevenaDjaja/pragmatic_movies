@@ -17,6 +17,22 @@
 				<th>Total gross:</th>
 				<td><%= format_total_gross(@movie) %></td>
 			</tr>
+			<tr>
+				<th>Cast:</th>
+				<td><%= @movie.cast %></td>
+			</tr>
+			<tr>
+				<th>Director:</th>
+				<td><%= @movie.director %></td>
+			</tr>
+			<tr>
+				<th>Duration:</th>
+				<td><%= @movie.duration %></td>
+			</tr>
+			<tr>
+				<th>Image:</th>
+				<td><%= image_for @movie %></td>
+			</tr>
 		</tbody>
 	</table>
 </article>

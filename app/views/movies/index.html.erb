@@ -6,7 +6,11 @@
 	<div class="container">
 	  <% @movies.each do |movie| %>
 	    <article>
-	    	<h1><%= link_to movie[:title], movie %></h1>
+	    	<h1>
+	    		<%= image_for movie %>
+	    		<%= link_to movie[:title], movie %>
+	    	</h1>
+	    	<h3><%= movie.cast %></h3>
 	    	<p><%= truncate(movie[:description], length: 40, separator: ' ') %></p>
 	    	<table style="text-align: left;">
 	    		<tbody>
@@ -21,6 +25,10 @@
 	    			<tr>
 	    				<th>Total gross:</th>
 	    				<td><%= format_total_gross(movie) %></td>
+	    			</tr>
+	    			<tr>
+	    				<th>Duration:</th>
+	    				<td><%= movie.duration %></td>
 	    			</tr>
 	    		</tbody>
 	    	</table>
