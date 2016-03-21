@@ -1,7 +1,21 @@
+@import 'colors';
+
 body {
 	font-family: Verdana, Helvetica, sans-serif;
 }
 
 .main {
 	// margin-left: 24px;
+}
+
+article.movie {
+	img {
+		float: left;
+		margin: 0 15px;
+		border: 3px solid $secondary-color;
+	}
+
+	table {
+		clear: both;
+	}
 }
