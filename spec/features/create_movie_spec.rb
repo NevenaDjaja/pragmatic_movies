@@ -9,7 +9,7 @@ describe "Creating a new movie" do
 
 		fill_in "Title", with: "New Movie Title"
 		fill_in "Description", with: "Superheroes saving the world"
-		fill_in "Rating", with: "PG-13"
+		select "PG-13", :from => "movie_rating"		
 		fill_in "Total gross", with: "75000000"
 		fill_in "Cast", with: "The award winning cast"
 		fill_in "Director", with: "The ever-creative director"
